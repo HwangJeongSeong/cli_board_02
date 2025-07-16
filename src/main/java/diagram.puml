@@ -1,0 +1,10 @@
+@startuml
+class User {
+  - name: String
+  + getName(): String
+}
+
+class Admin extends User {
+  + accessLevel: int
+}
+@enduml
