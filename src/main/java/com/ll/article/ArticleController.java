@@ -43,7 +43,7 @@ public class ArticleController {
             return;
         }
 
-        Article article = articleService.getFindById(id);
+        Article article = articleService.findById(id);
 
         if (article == null) {
             System.out.printf("%d번 게시물은 존재하지 않습니다.\n", id);
@@ -61,7 +61,7 @@ public class ArticleController {
             return;
         }
 
-        Article article = articleService.getFindById(id);
+        Article article = articleService.findById(id);
 
         if (article == null) {
             System.out.printf("%d번 게시물은 존재하지 않습니다.\n", id);
@@ -74,7 +74,7 @@ public class ArticleController {
             System.out.print("내용 : ");
             String modifyContent = Container.getSc().nextLine();
 
-            articleService.modify(article, modifySubject, modifyContent);
+            articleService.modify(article);
 
             System.out.printf("%d번 게시물이 수정되었습니다.\n", id);
         }
