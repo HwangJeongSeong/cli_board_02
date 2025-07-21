@@ -1,7 +1,6 @@
 package com.ll;
 
 import com.ll.db.DBConnection;
-
 import java.util.Scanner;
 
 public class Container {
@@ -21,10 +20,9 @@ public class Container {
     }
 
     public static DBConnection getDBConnection() {
-        if ( dbConnection == null ) {
+        if (dbConnection == null) {
             dbConnection = new DBConnection();
         }
-
         return dbConnection;
     }
 }

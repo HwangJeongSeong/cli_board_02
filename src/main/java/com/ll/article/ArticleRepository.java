@@ -46,8 +46,8 @@ public class ArticleRepository {
         Container.getDBConnection().delete(sql);
     }
 
-    public void update(Article article) {
-        String sql = String.format("UPDATE article SET subject = '%s', content = '%s' WHERE id = %d",
-                article.getSubject(), article.getContent(), article.getId());
+    public void modify(Article article, String modifySubject, String modifyContent) {
+        String sql = String.format("update article set subject='%s', content='%s' where id = %d", modifySubject, modifyContent, article.getId());
+        Container.getDBConnection().update(sql);
     }
 }

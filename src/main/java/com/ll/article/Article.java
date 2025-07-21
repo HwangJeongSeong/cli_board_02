@@ -1,34 +1,41 @@
 package com.ll.article;
 
-import java.util.List;
+import java.util.Map;
 
-
-public class ArticleService {
+public class Article {
     private int id;
     private String subject;
     private String content;
 
-    public ArticleService() {
-        articleRepository = new ArticleRepository();
+    public Article(int id, String subject, String content) {
+        this.id = id;
+        this.subject = subject;
+        this.content = content;
     }
 
-    public int create(String subject, String content) {
-        return articleRepository.create(subject, content);
+    public Article(Map<String, Object> row) {
+        this.id = (int)row.get("id");
+        this.subject = (String)row.get("subject");
+        this.content = (String)row.get("content");
     }
 
-    public List<Article> findAll() {
-        return articleRepository.findAll();
+    int getId() {
+        return this.id;
     }
 
-    public Article findById(int id) {
-        return articleRpository.findById(id);
+    String getSubject() {
+        return this.subject;
     }
 
-    public void remove(Article article) {
-        articleRepository.remove(article);
+    String getContent() {
+        return this.content;
     }
 
-    public void modify(Artilce article, String modifySubject, String modify, String modifyContent) {
-        articleRepository.modify(article, modifySubject, modifyContent);
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

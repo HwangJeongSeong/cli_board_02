@@ -131,6 +131,7 @@ public class DBConnection {
 
     public int update(String sql) {
         int affectedRows = 0;
+
         Statement stmt;
         try {
             stmt = connection.createStatement();
@@ -141,7 +142,6 @@ public class DBConnection {
 
         return affectedRows;
     }
-
 
     public int insert(String sql) {
         int id = -1;
